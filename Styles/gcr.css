@@ -1,0 +1,35 @@
+body {
+background-color : white;
+color : #5599EE;
+}
+
+.haut {
+    margin : 2px 2px 2px 2px;
+    height : 6%;
+}
+
+.gauche {
+    float:left;width:18%;
+    background-color:white; 
+    height:100%;
+}
+    
+.droite {
+        float:left;
+        width:80%;
+}
+
+.bas{
+    padding: 1% 2% 2% 2%;
+    background-color: #77AADD;
+    color:white;
+    
+}
+
+label.titre{
+   margin-left: 2%;
+    display:block;
+    width:20%;
+    float:left;
+    
+}
