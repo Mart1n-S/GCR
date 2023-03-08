@@ -1,0 +1,68 @@
+.xdebug-error{
+    color: black;
+}
+
+body {
+    background-color : white;
+    color : #5599EE;
+}
+    
+.topTitre {
+    margin : 4px;
+}
+
+.topTitre img{
+    width: 100px;
+    height: 60px;
+}
+    
+.menuNavigation {
+    float: left;
+    width: 18%;
+    background-color: white; 
+}
+        
+.containerElement {
+    float: left;
+    width: 80%;
+}
+
+.element{
+    padding: 20px;
+    background-color: #77AADD;
+    color:white;
+}
+
+.formulaireSelect {
+    margin-right: 8px;
+}
+    
+.titreLabel{
+    margin-left: 2%;
+    display: block;
+    width: 20%;
+    float: left;
+}
+    
+.affichageInformation{
+    width: 50ch;
+}
+
+textarea{
+    width: 51ch;
+}
+
+#formPraticien{
+    padding-left: 20px;
+}
+
+#formChoixMedicament1{
+    padding: 10px 0 0 20px;
+}
+
+#informationsUtilisateur {
+    font-family: Verdana,sans-serif;
+    font-size: 0.8em;
+    width: 95%;
+    background-color: wheat ;
+}

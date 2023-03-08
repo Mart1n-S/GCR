@@ -1,0 +1,35 @@
+body{
+    background-image: url(../images/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    font-family: Verdana,sans-serif;
+    font-size: 0.8em;
+}
+
+#formIdentification1 {
+    width: 350px;
+    margin: 0 auto ;
+}
+
+.titreLabel {
+    display: inline-block;
+    width: 100px;
+}
+
+.erreur{
+    background-color: rgb(237,210,229);
+    color: rgb(203,28,128);
+    width: 100%;
+    text-align: center;
+}
+
+.containerFormulaireIdentification{
+    display: flex;
+    justify-content: center;
+}
+
+.containerMdpBtn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
