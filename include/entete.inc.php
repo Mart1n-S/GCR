@@ -24,7 +24,7 @@
         <ul>
             <li>Comptes-Rendus</li>
             <ul>
-                <li><a href="index.php?action=10">Nouveaux</a></li>
+                <li><a href="index.php?action=10">Nouveau compte-rendu</a></li>
 
                 <li>Consulter</li>
             </ul>

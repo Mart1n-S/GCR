@@ -16,6 +16,40 @@ function formSelectDepuisRecordSet($id, $label, $name, $tabIndex, $jeuEnregistre
     return $codeHtml;
 }
 
+function formSelectDepuisRecordSet2D($id, $label, $name, $tabIndex, $tableaux, $valeurOptionnel, $disabled)
+{
+    $codeHtml = '<label for="' . $id . '">' . $label . '</label>';
+    $codeHtml .= '<select name="' . $name . '" id="' . $id . '" class="formulaireSelect" tabindex="' . $tabIndex . '">';
+    foreach ($tableaux as $row) {
+        $selected = '';
+        if ($row[0] == $valeurOptionnel) {
+            $selected = 'selected="selected"';
+        }
+        $codeHtml .= '<option value="' . $row[0] . '" ' . $selected . ' ' . ($disabled == TRUE ? 'disabled="disabled"' : '') . '>' . $row[1] . '</option>' . "\n";
+    }
+    $codeHtml .= '</select>';
+
+    return $codeHtml;
+}
+
+//zone de saisie à cocher checkbox
+function formInputCheckBox($affichage, $id, $name, $class, $label, $checked, $tabIndex, $lectureSeule)
+{
+    if ($affichage) {
+        $codeHtml = '<input type="checkbox" id="' . $id . '" name="' . $name . '" class="' . $class . '" ' . ($checked == 'on' ? 'checked="checked"' : '') . ' tabindex="' . $tabIndex . '" ' . ($lectureSeule == TRUE ? ' readonly="readonly"' : '') . '>';
+        $codeHtml .= '<label for="' . $id . '">' . $label . '</label>';
+    } else {
+        $codeHtml = '<label for="' . $id . '">' . $label . '</label>';
+        $codeHtml .= '<input type="checkbox" id="' . $id . '" name="' . $name . '" class="' . $class . '" ' . ($checked == 'on' ? 'checked="checked"' : '') . ' tabindex="' . $tabIndex . '" ' . ($lectureSeule == TRUE ? ' readonly="readonly"' : '') . '>';
+    }
+}
+
+//zone de saisie de type numérique
+function formInputNumber($id, $name,)
+{
+    ############A FINIR ####################"
+}
+
 // affiche input un lecture ou écriture
 function formInputText($id, $classLabelCss, $label, $name, $classInputCss, $valeur, $tabIndex, $lectureSeule, $required)
 {

@@ -20,7 +20,7 @@ switch ($_REQUEST['action']) {
         require_once './include/pied.inc.php';
         break;
     case 10: // Form rapport_visite
-        require_once './rapportVisite.php';
+        require_once './formCR_VISITE.php';
         break;
     case 15: // affiche liste déroulante des familles des médicaments
         require_once './familleMedicament.php';
