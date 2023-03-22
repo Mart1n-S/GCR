@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <link href="styles/gcr.css" rel="stylesheet">
     <title>GSB : Suivi de la Visite médicale </title>
+    <script src="javascript/jquery-3.6.4.slim.min.js"></script>
+    <?php if (isset($jsFichier)) {
+        echo '<script src="javascript/Bibliotheque01.js"></script>
+        <script src="javascript/crVisite.js"></script>';
+    } ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </head>
 
 <body>
     <div class="topTitre">
-        <h1><img src="images\logo.jpg">Gestion des comptes rendus de visite</h1>
+        <h1><img src="images/logo.jpg">Gestion des comptes rendus de visite</h1>
     </div>
 
     <div class="menuNavigation">

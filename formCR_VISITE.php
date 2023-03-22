@@ -1,32 +1,32 @@
 <?php
 $jsFichier = 'crVisite.js';
-require_once './Include/entete.inc.php';
-require_once './Include/Bibliotheque01.inc.php';
-require_once './Include/SourceDonnees.inc.php';
+require_once './include/entete.inc.php';
+require_once './include/bibliotheque01.inc.php';
+require_once './include/sourceDonnees.inc.php';
 ?>
-<div id="bas">
+
+<div class="element">
     <h1>Nouveau compte-rendu de visite</h1>
-    <form name="frmCompteRenduVisite" method="post" action="recupRAPPORT_VISITE.php">
+    <form name="frmCompteRenduVisite" id="frmCompteRenduVisite1" method="post" action="./index.php?action=11">
         <?php
         $indexTabulation = 10;
         $laListe = getListePraticiensTab();
-        $lesMotifsVisite = [[1, 'Périodicité'],
+        $lesMotifsVisite = [
+            [1, 'Périodicité'],
             [2, 'Nouveauté/actualisation'],
             [3, 'Relance (remontage)'],
             [4, 'Sollicitation du praticien'],
-            [5, 'Autre']];
+            [5, 'Autre']
+        ];
 
-        echo formInputText('DATE VISITE : ', 'txtDateVisite', 'txtDateVisite', '', 12, 10, $indexTabulation, FALSE, TRUE) . '<br />';
-//        echo formSelectDepuisRecordset('PRATICIEN : ', 'lstPrat', 'lstPrat', $laListe, '', $indexTabulation += 10);
-        echo formSelectDepuisTab2D('PRATICIEN : ', 'lstPrat', 'lstPrat', $laListe, '', $indexTabulation += 10, FALSE);
-        echo formInputCheckBox(TRUE, 'REMPLA&Ccedil;ANT', 'chkRemplacant', 'chkRemplacant', FALSE, $indexTabulation += 10, FALSE);
-
-//        echo formSelectDepuisRecordset('', 'lstRemplacant', 'lstRemplacant', $laListe, '', $indexTabulation += 10) . '<br />';
-        echo formSelectDepuisTab2D('', 'lstRemplacant', 'lstRemplacant', $laListe, '', $indexTabulation += 10, TRUE) . '<br />';
-        echo formInputNumber('COEFFICIENT DE CONFIANCE : ', 'numCoeffConfiance', 'numCoeffConfiance', '50', '0', '100', '0.5', $indexTabulation += 10, FALSE, TRUE) . '<br />';
-        echo formSelectDepuisTab2D('MOTIF : ', 'lstMotif', 'lstMotif', $lesMotifsVisite, 1, $indexTabulation += 10);
-        echo formInputText('', 'txtMotifExplication', 'txtMotifExplication', '', 50, 50, $indexTabulation += 10, TRUE, FALSE) . '<br />';
-        echo formTextArea('BILAN : ', 'taBilan', 'taBilan', '', 50, 5, 255, $indexTabulation += 10, FALSE) . '<br />';
+        echo formInputDate('txtDateVisite1', 'titreLabel', 'DATE VISITE : ', 'txtDateVisite', '', '', $indexTabulation, FALSE, TRUE);
+        echo formSelectDepuisTab2D('listePraticienCR1', 'titreLabel', 'PRATICIEN : ', 'listePraticienCR', $indexTabulation += 10,  $laListe, '', FALSE);
+        echo formInputCheckBox(TRUE, 'checkRemplacement1', 'checkRemplacement', 'chkRemplaçant', FALSE, $indexTabulation += 10, FALSE) . '<br><br>';
+        echo formSelectDepuisTab2D('listeRemplacant1', 'titreLabel', 'REMPLAÇANT : ', 'listeRemplacant', $indexTabulation += 10,  $laListe, '', TRUE) . '<br><br>';
+        echo formInputNumber('numCoeffConfiance1', 'titreLabel', 'numCoeffConfiance', 'COEFFICIENT DE CONFIANCE : ', '0', '100', '0.5', $indexTabulation += 10, FALSE, TRUE, '50') . '<br><br>';
+        echo formSelectDepuisTab2D('listeMotif1', 'titreLabel', 'MOTIF : ', 'listeMotif', $indexTabulation += 10,  $lesMotifsVisite, '', FALSE) . '<br><br>';
+        echo formInputText('txtMotifExplication1', 'titreLabel', 'MOTIF EXPLICATION : ', 'txtMotifExplication', 'affichageInformation', '', $indexTabulation += 10, FALSE, TRUE);
+        echo formTextArea('taBilan1', 'titreLabel', 'BILAN : ', 'taBilan', 255, 50, 5, $indexTabulation += 10, FALSE, '') . '<br><br>'
         ?>
         <h3>Produits présentés</h3>
         <ol id="listeProduitsPresentes">
@@ -34,17 +34,17 @@ require_once './Include/SourceDonnees.inc.php';
                 <?php
                 $laListe = getListeCompleteMedicaments();
 
-                echo formSelectDepuisTab2D(NULL, 'lstProduitsPresentes[0]', NULL, $laListe, NULL, $indexTabulation += 10);
-                echo formButton('btnAjouterPP', 'btnAjouterPP', '1', '+', $indexTabulation += 10, FALSE);
+                echo formSelectDepuisTab2D(NULL, NULL, NULL, 'listeProduitsPresentes[0]', $indexTabulation += 10,  $laListe, '', FALSE);
+                echo formButton('btnAjouterPP', 'btnAjouterPP1', '1', '+', $indexTabulation += 10, FALSE);
                 ?>
             </li>
         </ol>
-        <h3 id="h3EchantillonsDistribues">&Eacute;chantillons distribués <?php echo formButton('btnAjouterPremierED', 'btnAjouterPremierED', '1', 'Ajouter un échantillon', $indexTabulation += 10, FALSE); ?></h3>
+        <h3 id="h3EchantillonsDistribues">&Eacute;chantillons distribués <?php echo formButton('btnAjouterPremierED', 'btnAjouterPremierED1', '1', 'Ajouter un échantillon', $indexTabulation += 10, FALSE); ?></h3>
         <p>
             <?php
-            echo formInputCheckBox(TRUE, 'SAISIE D&Eacute;FINITIVE', 'chkSaisieDefinitive', 'chkSaisieDefinitive', FALSE, $indexTabulation += 10, FALSE);
-            echo formInputSubmit('btnSubmit', 'btnSubmit', 'Enregistrer', $indexTabulation += 100);
-            echo formInputReset('btnReset', 'btnReset', 'Réinitialiser', $indexTabulation += 10);
+            echo formInputCheckBox(TRUE, 'chkSaisieDefinitive1', 'chkSaisieDefinitive', 'SAISIE DÉFINITIVE', FALSE, $indexTabulation += 10, FALSE);
+            echo formBoutonSubmit('boutonSubmitCR', 'boutonSubmit2', 'Enregistrer', $indexTabulation += 100, FALSE);
+            echo formInputReset('btnReset', 'btnReset1', 'Réinitialiser', $indexTabulation += 10, $lectureSeule = FALSE);
             ?>
         </p>
     </form>

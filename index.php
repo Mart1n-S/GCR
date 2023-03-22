@@ -19,8 +19,11 @@ switch ($_REQUEST['action']) {
         require_once './include/entete.inc.php';
         require_once './include/pied.inc.php';
         break;
-    case 10: // Form rapport_visite
+    case 10: // Form contre rendu visite
         require_once './formCR_VISITE.php';
+        break;
+    case 11: // Form contre rendu visite
+        require_once './recapitulatifCR.php';
         break;
     case 15: // affiche liste déroulante des familles des médicaments
         require_once './familleMedicament.php';
