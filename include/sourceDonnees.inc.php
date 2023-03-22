@@ -15,7 +15,7 @@ function SGBDConnect()
 // récupère une partie des informations des praticiens
 function getListePraticiens()
 {
-    $sql = SGBDConnect()->prepare('SELECT PRA_NUM, concat(PRA_NOM,\' \',PRA_PRENOM)  
+    $sql = SGBDConnect()->prepare('SELECT PRA_NUM, concat(PRA_NOM,\' \',PRA_PRENOM)  AS NOM_COMPLET
     FROM praticien 
     ORDER BY PRA_NOM ,PRA_PRENOM');
     $sql->execute();
@@ -201,3 +201,120 @@ function getInformationsUtilisateur($idCodeUtilisateur)
 
     return $resultat;
 }
+
+
+function getListePraticiensTab()
+{
+    $sql = SGBDConnect()->prepare('SELECT PRA_NUM, concat(PRA_NOM,\' \',PRA_PRENOM) AS NOM_COMPLET, PRA_COEF
+    FROM praticien 
+    ORDER BY PRA_NOM ,PRA_PRENOM');
+    $sql->execute();
+
+    $resultat = $sql->fetchAll(PDO::FETCH_NUM);
+
+    return $resultat;
+}
+
+
+function getListeCompleteMedicaments()
+{
+    $sql = SGBDConnect()->prepare('SELECT MED_CODE, MED_NOM
+    FROM medicament 
+    ORDER BY MED_NOM');
+    $sql->execute();
+
+    $resultat = $sql->fetchAll(PDO::FETCH_BOTH);
+
+    return $resultat;
+}
+
+function getDerniereVisite($idUser)
+{
+    $sql = SGBDConnect()->prepare('SELECT MAX(VISITE_NUM) AS NUM_VISITE
+    FROM visite
+    WHERE VIS_CODE = :idVisiteur');
+    $sql->bindParam(":idVisiteur", $idUser, PDO::PARAM_STR);
+    $sql->execute();
+    $resultat = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $resultat;
+}
+
+function insertNouveauCompteRendu($idUser, $numVisite, $numPraticien, $numRemplacant, $date, $dateHeureCompteRendu, $motifVisite, $motifExplication, $bilan)
+{
+    $sql = SGBDConnect()->prepare('INSERT INTO visite
+    VALUES (:idVisiteur, :numVisite, :numPraticien, :numRemplacant, :date, :dateHeure, :numMotif, :motifExplication, :bilan)');
+    $sql->bindParam(':idVisiteur', $idUser);
+    $sql->bindParam(':numVisite', $numVisite);
+    $sql->bindParam(':numPraticien', $numPraticien);
+    $sql->bindParam(':numRemplacant', $numRemplacant);
+    $sql->bindParam(':date', $date);
+    $sql->bindParam(':dateHeure', $dateHeureCompteRendu);
+    $sql->bindParam(':numMotif', $motifVisite);
+    $sql->bindParam(':motifExplication', $motifExplication);
+    $sql->bindParam(':bilan', $bilan);
+    $sql->execute();
+
+    if ($sql) {
+        return true;
+    }
+}
+
+function updateCoefPraticien($coefPraticien, $numPraticien)
+{
+    $sql = SGBDConnect()->prepare('UPDATE praticien 
+    SET PRA_COEF = :coefPraticien
+    WHERE PRA_NUM = :numPraticien');
+    $sql->bindParam(':coefPraticien', $coefPraticien);
+    $sql->bindParam(':numPraticien', $numPraticien);
+    $sql->execute();
+
+    if ($sql) {
+        return true;
+    }
+}
+
+function insertMedicamentPresente($idUser, $numVisite, $codeMedicament)
+{
+    $sql = SGBDConnect()->prepare('INSERT INTO medicament_presente
+    VALUES (:idVisiteur, :numVisite, :codeMedicament)');
+    $sql->bindParam(':idVisiteur', $idUser);
+    $sql->bindParam(':numVisite', $numVisite);
+    $sql->bindParam(':codeMedicament', $codeMedicament);
+    $sql->execute();
+
+    if ($sql) {
+        return true;
+    }
+}
+
+function insertEchantillonDistribue($idUser, $numVisite, $codeMedicament, $quantiteEchantillon)
+{
+    $sql = SGBDConnect()->prepare('INSERT INTO echantillon_distribue
+    VALUES (:idVisiteur, :numVisite, :codeMedicament, :quantiteEchantillon)');
+    $sql->bindParam(':idVisiteur', $idUser);
+    $sql->bindParam(':numVisite', $numVisite);
+    $sql->bindParam(':codeMedicament', $codeMedicament);
+    $sql->bindParam(':quantiteEchantillon', $quantiteEchantillon);
+    $sql->execute();
+
+    if ($sql) {
+        return true;
+    }
+}
+
+function getPraticien()
+{
+    $sql = SGBDConnect()->prepare('SELECT PRA_COEF
+    FROM praticien 
+    WHERE PRA_NUM = :numPraticien');
+    $sql->bindParam(':numPraticien', $_POST['praticien']);
+    $sql->execute();
+
+    $resultat = $sql->fetch(PDO::FETCH_ASSOC);
+
+    $data = $resultat['PRA_COEF'];
+
+    echo $data;
+}
+getPraticien();
