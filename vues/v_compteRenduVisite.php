@@ -1,16 +1,9 @@
-<?php
-$jsFichier = 'crVisite.js';
-require_once './include/entete.inc.php';
-require_once './include/bibliotheque01.inc.php';
-require_once './include/sourceDonnees.inc.php';
-?>
-
 <div class="element">
     <h1>Nouveau compte-rendu de visite</h1>
-    <form name="frmCompteRenduVisite" id="frmCompteRenduVisite1" method="post" action="./index.php?action=11">
+    <form name="frmCompteRenduVisite" id="frmCompteRenduVisite1" method="post" action="index.php?uc=rapportVisite&action=recapitulatifCompteRenduVisite">
         <?php
         $indexTabulation = 10;
-        $laListe = getListePraticiensTab();
+
         $lesMotifsVisite = [
             [1, 'Périodicité'],
             [2, 'Nouveauté/actualisation'],
@@ -32,9 +25,8 @@ require_once './include/sourceDonnees.inc.php';
         <ol id="listeProduitsPresentes">
             <li>
                 <?php
-                $laListe = getListeCompleteMedicaments();
 
-                echo formSelectDepuisTab2D(NULL, NULL, NULL, 'listeProduitsPresentes[0]', $indexTabulation += 10,  $laListe, '', FALSE);
+                echo formSelectDepuisTab2D(NULL, NULL, NULL, 'listeProduitsPresentes[0]', $indexTabulation += 10,  $laListe2, '', FALSE);
                 echo formButton('btnAjouterPP', 'btnAjouterPP1', '1', '+', $indexTabulation += 10, FALSE);
                 ?>
             </li>
@@ -49,6 +41,3 @@ require_once './include/sourceDonnees.inc.php';
         </p>
     </form>
 </div>
-<?php
-require_once './Include/pied.inc.php';
-?>

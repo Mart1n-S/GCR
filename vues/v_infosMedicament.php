@@ -1,10 +1,5 @@
-<?php require './choixMedicament.php'; ?>
-
 <form name="formInformationsMedicament">
     <?php if (isset($_POST['listeMedicament'])) {
-
-        $codeMedicamentInformation = $_POST['listeMedicament'];
-        $resultatInformationsMedicament = getListeInformationsMedicament($codeMedicamentInformation);
 
         echo formInputText('nomMedicament1', 'titreLabel', 'NOM COMMERCIAL : ', 'nomMedicament', 'affichageInformation', $resultatInformationsMedicament['MED_NOM'], 15, TRUE, FALSE);
         echo formTextArea('compositionMedicament1', 'titreLabel', 'COMPOSITION : ', 'compositionMedicament', 255, 50, 5, 16, TRUE, $resultatInformationsMedicament['MED_COMPO']);
@@ -14,4 +9,3 @@
     }; ?>
 </form>
 </div>
-<?php require_once './include/pied.inc.php'; ?>

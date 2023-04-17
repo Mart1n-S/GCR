@@ -320,7 +320,7 @@ $(document).ready(function () {
 
     function updateCoeffConfiance(praticien) {
         $.ajax({
-            url: './include/sourceDonnees.inc.php',
+            url: './modele/sourceDonnees.inc.php',
             type: 'post',
             data: { praticien: praticien },
             success: function (data) { $('#numCoeffConfiance1').val(data); }
