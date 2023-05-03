@@ -200,7 +200,7 @@ function supprimerLigneEchantillonDistribue(indiceLigne) {
     if ($('#listeEchantillonsDistribues li:last-child #btnAjouterED1').length == 0) {
 
         // Ajout du bouton "+" à la dernière ligne avec le bon tabindex 
-        var tabindex = $('#listeEchantillonsDistribues li:last-child .boutonSupprimer').attr('tabindex');
+        var tabindex = $('#listeEchantillonsDistribues li:last-child .boutonSupprimerE').attr('tabindex');
         tabindex++;
 
         var nouveauBoutonAjout = jqFormButton('btnAjouterED', 'btnAjouterED1', 'boutonAjout', '3', '+', tabindex, false);

@@ -79,12 +79,12 @@ function creerLigneEchantillonDistribue(listeProduits, nameListeProduits, tabInd
     var nameBoutonSupprimer = 'btnSupprimerED' + nbLignes;
 
     // Création du bouton "-"
-    var boutonMoins = jqFormButton('btnSupprimerED', nameBoutonSupprimer, 'boutonSupprimer', "-", "-", nouveauTabindexLBtnSup, false);
+    var boutonMoins = jqFormButton('btnSupprimerED', nameBoutonSupprimer, 'boutonSupprimerE', "-", "-", nouveauTabindexLBtnSup, false);
 
     // Ajout du gestionnaire d'événement pour récupérer l'index et le passer en paramètre de la fonction qui s'occupe de la suppression
     $(document).ready(function () {
         boutonMoins.click(function () {
-            var index = $('li .boutonSupprimer').index(this);
+            var index = $('li .boutonSupprimerE').index(this);
             supprimerLigneEchantillonDistribue(index);
         });
     });
