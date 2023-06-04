@@ -1,16 +1,29 @@
 <?php
-// connexion à la base de données
+// connexion à la base de données Maison
+// function SGBDConnect()
+// {
+//     require 'configurationBDD.php';
+//     try {
+//         $connexion = new PDO($bddDNS, $bddUser, $bddMotDePasse, $options);
+//     } catch (PDOException $e) {
+//         echo 'Erreur !: ' . $e->getMessage() . '<br />';
+//         exit();
+//     }
+//     return $connexion;
+// };
+
+// connexion à la base de données Lycée
 function SGBDConnect()
 {
-    require 'configurationBDD.php';
     try {
-        $connexion = new PDO($bddDNS, $bddUser, $bddMotDePasse, $options);
+        $connexion = new PDO('mysql:host=svrslam02;dbname=gsb1_1', 'PPEgsb', 'PPEgsb');
+        $connexion->query('SET NAMES UTF8');
     } catch (PDOException $e) {
         echo 'Erreur !: ' . $e->getMessage() . '<br />';
         exit();
     }
     return $connexion;
-};
+}
 
 // récupère une partie des informations des praticiens
 function getListePraticiens()
