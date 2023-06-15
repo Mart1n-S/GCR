@@ -1,5 +1,4 @@
 <?php
-// require_once './include/sourceDonnees.inc.php';
 
 function validationInformationsCompteUtilisateur($codeUtilisateur, $motDePasseUtilisateur)
 {

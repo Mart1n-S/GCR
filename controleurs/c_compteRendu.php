@@ -60,7 +60,6 @@ switch ($action) {
             }
             $laListe = getListePraticiensTab();
             $laListe2 = getListeCompleteMedicaments();
-            // $resultatMedE = getListeInformationsMedicament($echantillon);
             include("vues/v_entete.php");
             include("vues/v_recapitulatifCompteRenduVisite.php");
             include("vues/v_pied.php");
