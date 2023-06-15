@@ -31,20 +31,20 @@
         <ul>
             <li>Comptes-Rendus</li>
             <ul>
-                <li><a href="index.php?action=10">Nouveau compte-rendu</a></li>
+                <li><a href="index.php?uc=rapportVisite&action=compteRenduVisite">Nouveau compte-rendu</a></li>
 
                 <li>Consulter</li>
             </ul>
 
             <li>Consulter</li>
             <ul>
-                <li><a href="index.php?action=15">Médicaments</a></li>
-                <li><a href="index.php?action=30">Praticiens</a></li>
-                <li><a href="index.php?action=35">Autres visiteurs</a></li>
+                <li><a href="index.php?uc=medicament&action=listeFamilleMedicament">Médicaments</a></li>
+                <li><a href="index.php?uc=praticien&action=listePraticien">Praticiens</a></li>
+                <li><a href="####">Autres visiteurs</a></li>
             </ul>
             <li>Déconnexion</li>
             <ul>
-                <li><a href="index.php?action=40">Fermer la session</a></li>
+                <li><a href="index.php?uc=connexion&action=deconnexion">Fermer la session</a></li>
             </ul>
         </ul>
     </div>

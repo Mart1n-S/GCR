@@ -1,6 +1,4 @@
-<?php session_start();
-require_once './include/sourceDonnees.inc.php';
-
+<?php
 
 function validationInformationsCompteUtilisateur($codeUtilisateur, $motDePasseUtilisateur)
 {

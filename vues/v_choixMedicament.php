@@ -1,10 +1,6 @@
-<?php
-require './familleMedicament.php';
-?>
-<form name="formChoixMedicament" id="formChoixMedicament1" method="post" action="./index.php?action=25">
+<form name="formChoixMedicament" id="formChoixMedicament1" method="post" action="index.php?uc=medicament&action=infosMedicament">
 
     <?php
-    $resultatListeMedicament = getListeMedicament();
     if (isset($_REQUEST['listeMedicament'])) {
         $codeMedicament = $_REQUEST['listeMedicament'];
     } else {
