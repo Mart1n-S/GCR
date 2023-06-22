@@ -15,7 +15,7 @@
 ## 📸 A small preview
 
 <p align="center">
-  <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr1.png" alt="image GCR" />
+  <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr.png" alt="image GCR" />
   <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr2.png" alt="image GCR" />
   <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr3.png"alt="image GCR" />
   <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr4.png" alt="image GCR" /><br>
