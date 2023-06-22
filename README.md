@@ -11,7 +11,7 @@
 <div align="center">
     Projet réalisé lors de ma première année de BTS.</b>
 </div>
-
+> <p align="center">Ce projet m'a permis d'acquérir de l'expérience en PHP, JavaScript et en gestion de bases de données.<p/><br>
 ## 📸 A small preview
 
 <p align="center">
