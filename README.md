@@ -15,8 +15,8 @@
 ## 📸 A small preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr1.png" alt="image GCR" />
-  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr2.png" alt="image GCR" />
-  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr3.png"alt="image GCR" />
-  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr4.png" alt="image GCR" /><br>
+  <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr1.png" alt="image GCR" />
+  <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr2.png" alt="image GCR" />
+  <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr3.png"alt="image GCR" />
+  <img src="https://github.com/Mart1n-S/GCR/blob/master/github/gcr4.png" alt="image GCR" /><br>
 </p>
