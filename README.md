@@ -15,9 +15,8 @@
 ## 📸 A small preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Mart1n-S/Cook-Time/main/github/UI1.png" alt="image GCR" />
-  <img src="https://raw.githubusercontent.com/Mart1n-S/Cook-Time/main/github/UI2.png" alt="image GCR" />
-  <img src="https://raw.githubusercontent.com/Mart1n-S/Cook-Time/main/github/UI5.png" alt="image GCR" />
-  <img src="https://raw.githubusercontent.com/Mart1n-S/Cook-Time/main/github/UI3 .png" alt="image GCR" /><br>
-  <img src="https://raw.githubusercontent.com/Mart1n-S/Cook-Time/main/github/UI4.png" alt="image GCR" /><br>
+  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr1.png" alt="image GCR" />
+  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr2.png" alt="image GCR" />
+  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr3.png"alt="image GCR" />
+  <img src="https://raw.githubusercontent.com/Mart1n-S/GCR/main/github/gcr4.png" alt="image GCR" /><br>
 </p>
