@@ -1,4 +1,5 @@
 <h1 align="center">GCR</h1>
+<blockquote align="center"><h3>Gestion des Comptes Rendus</h3></blockquote><br>
 
 <p align="center">
   <img src="https://www.vectorlogo.zone/logos/php/php-ar21.svg" alt="PHP Logo" height="80"/>
@@ -12,6 +13,7 @@
     Projet réalisé lors de ma première année de BTS.</b>
 </div>
 <p align="center">Ce projet m'a permis d'acquérir de l'expérience en PHP, JavaScript et en gestion de bases de données.<p/><br>
+  
 ## 📸 A small preview
 
 <p align="center">
